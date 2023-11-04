@@ -1,0 +1,170 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#clock {
+    text-align: center;
+    font-size: 180px;
+    color: green;
+    font-weight: normal;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-style: normal;
+}
+
+.time-rings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; /* 调整上边距，控制圆环与时间段落之间的间距 */
+    margin-bottom: 10px;
+}
+
+.time-ring {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: 0 70px; /* 调整左右间距，控制三个圆环之间的间距 */
+}
+
+.progress {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transform: rotate(90deg);
+    transform-origin: 50% 50%;
+    animation: progressAnimation 60s linear infinite;
+}
+
+/* @keyframes progressAnimation {
+    0% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(450deg);
+    }
+} */
+@keyframes secondProgressAnimation {
+    0% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(450deg);
+    }
+}
+
+@keyframes minuteProgressAnimation {
+    0% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(450deg);
+    }
+}
+
+@keyframes hourProgressAnimation {
+    0% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(450deg);
+    }
+}
+
+#second-progress {
+    animation: secondProgressAnimation 30s linear infinite; /* 每轮60秒 */
+}
+
+#minute-progress {
+    animation: minuteProgressAnimation 60s linear infinite; /* 每轮3600秒，即60分钟 */
+}
+
+#hour-progress {
+    animation: hourProgressAnimation 90s linear infinite; /* 每轮43200秒，即12小时 */
+}
+
+
+#fullscreen-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#toggleFullscreenButton {
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0px 0px 90px #e603078a;
+    color: white;
+    font-size: 24px;
+}
+
+#toggleFullscreenButton:hover {
+    background-color: yellow;
+}
+
+#darkmode-button {
+    position: absolute;
+    top: 10px;
+    right: 35px;
+}
+
+#toggleDarkModeButton {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0px 0px 90px #07e6038a;
+    color: white;
+    font-size: 24px;
+}
+
+#toggleDarkModeButton:hover {
+    background-color: yellow;
+}
+
+/* 深色模式样式 */
+body.dark-mode {
+    background-color: #222; /* 修改背景颜色为深色 */
+    color: #fff; /* 修改文本颜色为白色 */
+}
+
+body.dark-mode .container {
+    background-color: #222; /* 修改 container 背景颜色为深色 */
+    color: #fff; /* 修改 container 文本颜色为白色 */
+    box-shadow: none; /* 去掉 container 阴影 */
+}
+
+/* 深色模式下的时间环样式，您可以根据需要添加 */
+body.dark-mode .progress {
+    background-color: transparent; /* 修改时间环背景颜色 */
+}
+
