@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Time</title>
+        <link rel="stylesheet" type="text/css" href="time.css">
+    </head>
+    <body>
+        <div class="container">
+            <div id="clock"></div>
+            <div class="time-rings">
+                <div class="time-ring" id="hour-ring">
+                    <div class="progress" id="hour-progress"></div>
+                </div>
+                <div class="time-ring" id="minute-ring">
+                    <div class="progress" id="minute-progress"></div>
+                </div>
+                <div class="time-ring" id="second-ring">
+                    <div class="progress" id="second-progress"></div>
+                </div>
+            </div>
+            <div id="fullscreen-button">
+                <button id="toggleFullscreenButton" onclick="toggleFullScreen()"></button>
+            </div>
+            <div id="darkmode-button">
+                <button id="toggleDarkModeButton" onclick="toggleDarkMode()"></button>
+            </div>
+            <script src="time.js"></script>
+        </body>
+    </html>
