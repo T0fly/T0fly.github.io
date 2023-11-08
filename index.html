@@ -3,8 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport "
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no " />
         <title>Time</title>
         <link rel="stylesheet" type="text/css" href="time.css">
+        <link rel="stylesheet" href="gongde.css">
     </head>
     <body>
         <div class="container">
@@ -26,6 +29,22 @@
             <div id="darkmode-button">
                 <button id="toggleDarkModeButton" onclick="toggleDarkMode()"></button>
             </div>
-            <script src="time.js"></script>
-        </body>
-    </html>
+        </div>
+        <div class="black-section">
+            <div class="centered-content">
+                <div class="animated-text-container" id="text-container">
+                    <img src="src/muyu.png" alt="木鱼" id="muyu-img"
+                        onclick="addGoodDeed()">
+                </div>
+                <audio id="audio-click" src="src/Knock.mp3"></audio>
+            </div>
+            <!-- 添加一个按钮来控制木鱼自动敲击 -->
+            <div id="auto-knock-button">
+                <button id="toggleAutoKnockButton" onclick="toggleAutoKnock()">自动敲击</button>
+            </div>
+        </div>
+
+        <script src="time.js"></script>
+        <script src="gongde.js"></script>
+    </body>
+</html>
